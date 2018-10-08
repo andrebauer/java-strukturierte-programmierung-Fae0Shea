@@ -18,7 +18,7 @@ plugins {
 }
 
 // Define the main class for the application
-mainClassName = 'App'
+mainClassName = 'Main'
 
 dependencies {
     // This dependency is found on compile classpath of this component and consumers.
@@ -39,8 +39,12 @@ repositories {
     jcenter()
 }
 
-test {
-    testLogging {
-        exceptionFormat = 'full'
-    }
+test { 
+  testLogging {
+    exceptionFormat = 'full'
+  }
+}
+
+run {
+  standardInput = System.in
 }

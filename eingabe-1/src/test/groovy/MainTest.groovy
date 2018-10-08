@@ -4,14 +4,15 @@
 import spock.lang.Specification
 
 class MainTest extends Specification {
-    def "application has a greeting"() {
-        setup:
-        def app = new Main()
-
+    def "Greeting uses the word 'Hello' and greets #name"() {
         when:
-        def result = app.greeting
+        def result = Main.getGreeting(name)
 
         then:
-        result != null
+        result =~ /Hello/
+        result =~ /$name/
+
+        where:
+        name << ["world", "Anna", "Tobi", "Jeff"]
     }
 }
